@@ -4,23 +4,11 @@ import {
     getCoreRowModel, 
     useReactTable 
 } from "@tanstack/react-table";
+import type { Venda } from "../types/venda";
 
-export interface Venda {
-    id: number;
-    produto: string;
-    categoria: string;
-    quantidade: number;
-    valorTotal: number;
-    data: string;
+interface SalesTableProps {
+    data: Venda[];
 }
-
-const data: Venda[] = [
-    { id: 1, produto: "Notebook Gamer", categoria: "Eletrônicos", quantidade: 1, valorTotal: 4500.00, data: "2023-10-25" },
-    { id: 2, produto: "Cadeira de Escritório", categoria: "Móveis", quantidade: 2, valorTotal: 800.00, data: "2023-10-26" },
-    { id: 3, produto: "Monitor 24pol", categoria: "Eletrônicos", quantidade: 3, valorTotal: 2100.00, data: "2023-10-27" },
-    { id: 4, produto: "Teclado Mecânico", categoria: "Periféricos", quantidade: 5, valorTotal: 750.00, data: "2023-10-28" },
-    { id: 5, produto: "Mesa em L", categoria: "Móveis", quantidade: 1, valorTotal: 1200.00, data: "2023-10-29" },
-];
 
 const columnHelper = createColumnHelper<Venda>();
 
@@ -41,11 +29,11 @@ const columns = [
         header: "Qtd.",
         cell: (info) => <span>{info.getValue()}</span>
     }),
-    columnHelper.accessor("data", {
+    columnHelper.accessor("data_venda", {
         header: "Data",
         cell: (info) => new Date(info.getValue()).toLocaleDateString("pt-BR")
     }),
-    columnHelper.accessor("valorTotal", {
+    columnHelper.accessor("valor_total", {
         header: "Total",
         cell: (info) => {
             const valor = info.getValue();
@@ -54,7 +42,7 @@ const columns = [
     }),
 ];
 
-const SalesTable = () => {
+const SalesTable = ({data}: SalesTableProps) => {
     const table = useReactTable({
         data,
         columns,
