@@ -10,7 +10,7 @@ interface FiltersProps {
 
 const Filters = ({onSearchChange, onCategoryChange, onDateRangeChange, categorias}: FiltersProps) => {
     return (
-        <div className="m-6 p-4 md:p-6 grid grid-cols-1 md:grid-cols-4 gap-4 bg-white rounded-md shadow-md">
+        <div className="m-6 p-4 md:p-6 grid grid-cols-1 md:grid-cols-4 gap-4 bg-white rounded-md shadow-md text-sm">
             <div className="flex items-center justify-between border border-secondary rounded-md px-3 py-2 gap-2">
                 <input 
                     type="text" 
