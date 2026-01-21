@@ -6,7 +6,7 @@ import Filters from "./components/filters";
 import SalesTable from "./components/salesTable";
 import { useCategorias } from "./hooks/useCategory";
 
-function App() {
+const App = () => {
   const [filtros, setFiltros] = useState({
       produto: "",
       categoria: "",
