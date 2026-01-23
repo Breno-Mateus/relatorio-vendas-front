@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# 📊 Relatório de Vendas — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend de uma aplicação simples de **Relatório de Vendas**, desenvolvida como parte de uma **etapa de teste técnico**. A aplicação permite visualizar os dados de vendas e gerar um **relatório em PDF**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o projeto
 
-## React Compiler
+Este projeto tem como objetivo demonstrar:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Organização de código no frontend
+* Consumo e exibição de dados
+* Geração de relatório em PDF
+* Simplicidade e clareza na interface
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* React
+* Vite
+* TypeScript
+* Tailwind CSS
+* Tanstack query
+* Tanstack table
+* Axios
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Como executar o projeto
+
+### Pré-requisitos
+
+* Node.js (versão 18 ou superior)
+* npm ou yarn
+
+⚠️ Importante: Para que as informações de vendas sejam exibidas na interface, é necessário que o backend desenvolvido esteja em execução na máquina.
+
+### Passos
+
+```bash
+# Clone o repositório
+git clone <URL_DO_REPOSITORIO>
+
+# Acesse a pasta do projeto
+cd nome-do-projeto
+
+# Instale as dependências
+npm install
+
+# Execute a aplicação
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+A aplicação estará disponível em:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+http://localhost:5173
+```
+
+---
+
+## Interface da aplicação
+
+Tela principal do relatório de vendas:
+
+![Interface da aplicação](./src/assets/relatorio_interface.png)
+
+---
+
+## Relatório em PDF
+
+Exemplo do PDF gerado pela aplicação:
+
+![PDF gerado](./src/assets/relatorio_pdf.png)
+
+---
+
+## Observações
+
+* Projeto desenvolvido exclusivamente para fins de avaliação técnica
+* Os dados apresentados são fictícios
+* O foco está na funcionalidade e clareza do código
+
+---
+
+## Autor
+
+**Breno Mateus**
